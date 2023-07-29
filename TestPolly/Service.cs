@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace TestPolly
 {
+    /// <summary>
+    /// Singleton class: represents an external service. It is used to throw an exception and test Polly
+    /// </summary>
     public sealed class Service
     {
         private static Service  _instance;
@@ -25,6 +28,10 @@ namespace TestPolly
             }
         }
 
+        /// <summary>
+        /// Fake method that throws an exception. The number of times it is invoked is counted.
+        /// </summary>
+        /// <exception cref="NotImplementedException">Exeception</exception>
         public void doOperation()
         {
             counterInvoke++;
